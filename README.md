@@ -1,5 +1,7 @@
 ### Note
 The finished scripts are `kApplication.py`, `KeysightUXR_class.py`, `Keithley2410_class.py`, `convertH5ToROOT.py`, `TimingDAQ_mod.zip`.
+This is more of a tool for communicating with the lab devices.
+Also, there is a script for automated bias voltage scan with Keysight UXR 0104B oscilloscope and Keithley2410 power supply.
 
 ### 0. Introduction:
 
