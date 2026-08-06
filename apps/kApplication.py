@@ -299,11 +299,7 @@ def main():
 
     try:
         print("Connecting to Keithley 2410...")
-        keithley = Keithley2410(
-            port=args.port,
-            baud_rate=args.baud_rate,
-            timeout=args.timeout,
-        )
+        keithley = Keithley2410(port=args.port, baud_rate=args.baud_rate, timeout=args.timeout)
         print("Connected.")
         print("Type 'help' to see the available commands.")
         print()
@@ -312,7 +308,6 @@ def main():
             print("Keithley identity:")
             print(keithley.kReadIdentity())
             print()
-
         except Exception:
             print("Could not read identity, but the connection was created.")
             print()
@@ -340,12 +335,10 @@ def main():
 
             except Exception as error:
                 print(f"Error: {error}")
-
                 try:
                     print("Keithley errors:")
                     for keithley_error in keithley.kReadAllErrors():
                         print(keithley_error)
-
                 except Exception:
                     pass
 
@@ -355,12 +348,8 @@ def main():
             print("Safe shutdown.")
 
             try:
-                keithley.kSafeShutdown(
-                    v_per_s=args.default_ramp_down_speed,
-                )
-
+                keithley.kSafeShutdown()
                 print("Output off.")
-
             except Exception as error:
                 print(f"Problem during safe shutdown: {error}")
 
@@ -368,7 +357,6 @@ def main():
                 print("Keithley errors:")
                 for keithley_error in keithley.kReadAllErrors():
                     print(keithley_error)
-
             except Exception:
                 pass
 

@@ -107,7 +107,7 @@ class Keithley2410:
     def kSafeShutdown(self, v_per_s: float = 20.0):
         '''Ramps down to 0 Volts and turns the output off.'''
         try:
-            self.kRampDown(v_per_s=v_per_s)
+            self.kRamp(v_final=0, v_per_s=v_per_s, v_step=1, delta_t_hardware=0)
         finally:
             self.kSetOutput(0)
 
@@ -207,7 +207,11 @@ class Keithley2410:
         k_step = np.sign(v_diff)
         n_steps = int(np.floor(np.abs(v_diff / v_step)))
         t_delay = np.abs(v_step / v_per_s) - delta_t_hardware
-        # t_delay = np.abs(v_step / v_per_s)
+        if t_delay < 0:
+            print("You probably used kRamp with the default delta_t_hardware=0.0328 value.\n")
+            print("As 0.0328 was adjusted for Xeon W-2225, it can cause problems. \n")
+            print("Thus, Change delta_t_hardware=0 or use bigger v_step.\n")
+            return
 
         for i in range(1, n_steps + 1):
             v_now = v_initial + i * k_step * np.abs(v_step)
@@ -220,7 +224,7 @@ class Keithley2410:
                 if not error.startswith("0"):
                     raise RuntimeError(f"Keithley error during ramp at {v_now} V: {error}")
 
-        self.kSetVoltageCrude(v_final)                    # ensuring that the final voltage is exactly v_final
+        self.kSetVoltageCrude(v_final)
 
     def kRampDown(self, v_per_s: float = 5.0, v_step=0.5):
         '''Changes the voltage gradually at v_per_s till reaches 0 Volts.'''
