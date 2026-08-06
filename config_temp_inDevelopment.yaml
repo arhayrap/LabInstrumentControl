@@ -1,0 +1,161 @@
+# --------------------------------------------------------------------------------
+# Scope Configurations
+# --------------------------------------------------------------------------------
+ScopeConfig:
+
+  # Bools -----------------------
+  boolResetUponInitialization: False
+  boolClearDisplayUponInitialization: True
+  boolClearStatusUponInitialization: True
+  
+  boolSaveMReport: False
+  boolAutoDeleteH5FromScope: False
+
+
+
+  # Pyvisa Setup ----------------
+  pyvisaConnection:
+    address: "USB0::10893::36867::MY64060141::0::INSTR"
+    libraryPath: "/opt/keysight/iolibs/libktvisa32.so"
+    timeoutMilliseconds: 600000000
+    endoding: "latin_1"
+
+
+
+  # Acquisition -----------------
+  acquisition:
+    boolSetup: False
+    numSamples: 5120
+    numSegments: 20000
+    samplingRate: 128e9
+    mode: "SEGmented"
+    saveWhichSegments: "ALL"
+    interpolation: 0
+    fileExtension: "H5"
+    filenamePrefis: "Jul31_"
+    saveHeader: True
+
+
+
+  # Trigger ---------------------
+  trigger:
+    boolSetup: False
+
+    mode: "SEQuence"
+    sequence:
+      boolSequenceReset: True
+      sequenceResetTime: 25e-9
+      term1Mode: "EDGE1"
+      term2Mode: "EDGE2"
+      term1Channel:
+      term2Channel:
+      term1Polarity:
+      term2Polarity:                   #????????????||
+
+
+
+  # Timebase --------------------
+  timebase:
+    boolSetup: False
+
+    horizontalRange:
+    horizontalScale:
+    horizontalPosition:
+    horizontalReferencePercent: 50
+
+
+
+  # Channels --------------------
+  channels:
+    boolSetup: False
+
+    channel_1:
+      label: "MCP"
+      triggerLevel:
+      verticalScale:
+      verticalOffset:
+      verticalRange:
+      boolDisplay: True
+      boolSaveChannel: True
+      polarity:
+      probe: 1
+
+    channel_2:
+      label: ""
+      triggerLevel:
+      verticalScale:
+      verticalOffset:
+      verticalRange:
+      boolDisplay: True
+      boolSaveChannel: True
+      polarity:
+      probe: 1
+
+    channel_3:
+      label: ""
+      triggerLevel:
+      verticalScale:
+      verticalOffset:
+      verticalRange:
+      boolDisplay: True
+      boolSaveChannel: True
+      polarity:
+      probe: 1
+
+    channel_4:
+      label: ""
+      triggerLevel:
+      verticalScale:
+      verticalOffset:
+      verticalRange:
+      boolDisplay: True
+      boolSaveChannel: True
+      polarity:
+      probe: 1
+
+
+
+  # Directories -----------------
+  directories:
+    parentDirectory: "C:\\Users\\Public\\Documents\\Infiniium"
+    waveformDirectory: "C:\\Users\\Public\\Documents\\Infiniium\\Waveforms"
+    setupSavingDirectory: "C:\\Users\\Public\\Documents\\Infiniium\\Setups"
+    mreportSavingDirectory: "C:\\Users\\Public\\Documents\\Infiniium\\MReports"
+  
+
+
+  
+
+# --------------------------------------------------------------------------------
+# 
+# --------------------------------------------------------------------------------
+MCP:
+  voltage: 4300
+
+
+
+# --------------------------------------------------------------------------------
+# PC configurations
+# --------------------------------------------------------------------------------
+PCConfig:
+
+  directories:
+    waveformDirectory: "../0_RawData_h5"
+    convertedRootsDirectory: "../1_ConvertedRoots"
+    preprocessedRootsDirectory: "../2_PreprocessedRoots"
+    logDirectory: "_logs"
+  
+  preprocessor:
+    path: "../TimingDAQ_mod/NetScopeStandaloneDat2Root"
+    config: "configs/Keysight_v01.config"
+    saveWaveforms: True
+
+  h5ToRootConverter:
+    path: "src/convertH5ToROOT.py"
+
+
+# --------------------------------------------------------------------------------
+# Keithley 2410 configurations
+# --------------------------------------------------------------------------------
+KeithleyConfig:
+  biasVoltages: [-119, -117]
