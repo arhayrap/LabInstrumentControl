@@ -461,7 +461,6 @@ class InfiniiumScope:
     def iPrintScopeErrors(self, label:str=None):
         print(label)
         print("Errors: ", self.iReadErrors())
-        # print("OPC: ", bool(self.iReadOperationComplete()), "\n")
 
     def iSetAutoscale(self):
         '''Auto-scales the timebase and channel axes to display [PROBABLY NOT SO USEFUL].'''
@@ -551,7 +550,6 @@ class InfiniiumScope:
         ● scale: [s], <br> 
         ● offset: [s], <br> 
         ● reference: [%].'''
-        # self.iReadOperationComplete()
 
         self.iSetTimebaseScale(timebase_scale)        
         self.iSetTimebasePosition(timebase_offset)
