@@ -1,9 +1,21 @@
 ### Note
-The finished scripts are `kApplication.py`, `KeysightUXR_class.py`, `Keithley2410_class.py`, `convertH5ToROOT.py`, `TimingDAQ_mod.zip`.
+The finished scripts are `kApplication.py`, `KeysightUXR_class.py`, `Keithley2410_class.py`, `convertH5ToROOT.py`.
 This is more of a tool for communicating with the lab devices.
 Also, there is a script for automated bias voltage scan with Keysight UXR 0104B oscilloscope and Keithley2410 power supply.
 
-### 0. Introduction:
+### Cloning the repository into an empty folder:
+~~~bash
+git clone https://github.com/SamvelAghavelyan/LabInstrumentControl
+~~~
+
+Or just download the `.zip` and unzip it into an empty folder.
+So, in the end, the folder should look like this:
+```
+MyProjectFolder
+└── LabInstrumentControl
+```
+
+### Introduction:
 
 In this repository you will find tools to:
 
@@ -45,56 +57,74 @@ In this repository you will find tools to:
 
         - `.root` preprocessed files:
 
-            - TimingDAQ preprocessed files (with `amp, LP2_XX, t_peak, ...`).
+             TimingDAQ preprocessed files (with `amp, LP2_XX, t_peak, ...`).
 
 - **Current/Voltage/time** logging scripts (for example for LGAD leakage current gradual increasing studies).
 
 
-### 1. How to set up.
+### Software requirements (basic):
+- `python 3.12`, `numpy`, `matplotlib`, `scipy`, `pandas`, `h5py`, `pyvisa`, `pyvisa-py`, `zeroconf`, `pyyaml`, `gxx`, `root`, `uproot` are needed for full automation.
 
-1. Install **Keysight IO Libraries**: https://www.keysight.com/us/en/lib/software-detail/computer-software/io-libraries-suite-downloads-2175637.html
+- If you want to create a new conda environment, run this (change `autodaq` to your desired conda environment name):
+    ~~~bash
+    sudo chmod +x setupScripts/setupCondaEnvironment.sh
+    ~~~
+    and then:
+    ~~~bash
+    setupScripts/setupCondaEnvironment.sh autodaq
+    ~~~
 
-2. Clone the repository into an empty folder:
-~~~bash
-git clone https://github.com/SamvelAghavelyan/LabInstrumentControl
+### Setting up for Keysight.
+
+- Install **Keysight IO Libraries**: https://www.keysight.com/us/en/lib/software-detail/computer-software/io-libraries-suite-downloads-2175637.html
+- Make sure the library path in `LabInstrumentControl/classes/KeysightUXR_class.py` is right (by default, your installation should place it in `/opt/keysight/iolibs/libktvisa32.so`).
+- Make sure the visa address matches your Keysight.
+- Test the connection:
+~~~python
+# ----------------------------------------
+# Keysight communication test.
+# ----------------------------------------
+from classes.KeysightUXR_class import InfiniiumScope
+scope = InfiniiumScope()
+print(scope.iReadIdentity())
+
 ~~~
 
-Or just download the `.zip` and unzip it into an empty folder.
-So, in the end, the folder should look like this:
-```
-MyProjectFolder
-└── LabInstrumentControl
-```
-
-3. Next step: **full setup/initialization** from scratch (RECOMMENDED for cleaner use). 
-- Think of a conda environment name (I will call it `autodaq`),
-- `cd` into `LabInstrumentControl` directory (such that `./` is `LabInstrumentControl`),
-- Run the `fullsetup_inDevelopment.sh` script:
-~~~bash
-./fullsetup_inDevelopment.sh autodaq
+### Setting up for Keithley.
+- Connect to the Keithley using an RS232 cable.
+- Press front panel `Menu` $\rightarrow$ `Communication` $\rightarrow$ `RS-232`
+    
+    - `Baud Rate` $\rightarrow$ `9600`
+    - `Bits` $\rightarrow$ `8`
+    - `Parity` $\rightarrow$ `None`
+    - `Terminator` $\rightarrow$ `<CR>`
+    - `Flow Control` $\rightarrow$ `None`
+- Find the address of the Keithley using `pyvisa.ResourceManager`.
+- Make sure the addresses match in `LabInstrumentControl/classes/Keithley2410_class.py` and your visa address.
+- Test the connection:
+~~~python
+# ----------------------------------------
+# Keithley communication test.
+# ----------------------------------------
+from classes.Keithley2410_class import Keithley2410
+keithley = Keithley2410()
+print(keithley.kReadIdentity())
 ~~~
 
-This will create a conda environment with required modules and packages, and automatically compile the ```TimingDAQ``` preprocessors adjusted for these tools (```Appendix 1```).
+Although communication using RS232 is recommended, you can use GPIB cable too. This documentation does not include instructions for that.
 
-- Check the project directory structure. Should look like this:
-```
-MyProjectFolder
-├── 0_RawData_h5
-├── 1_ConvertedRoots
-├── 2_PreprocessedRoots
-├── LabInstrumentControl
-└── TimingDAQ_mod
-```
-- See `Appendix 3` to know what each folder is for.
 
-### 2. How to use this tool.
 
-- You'll need to set up Keithley 2410 communication (see `Appendix 4` and `Appendix 5` for directions).
+### How to use `autoDAQ*.py` scripts.
 
-The main script for automatic DAQ is ```autoDAQ_template.py```. I designed it to be as intuitive, configurable and modular as I could imagine within the time allocated for the project (including the testing, and other tasks too). You can find detailed documentation on how to use ```Keysight UXR0104B``` and ```Keithley 2410``` power supply for ```autoDAQ``` in the configs/```configTemplate.py``` file.
+Note:
+- The main scripts for automatic DAQ with Keysight and Keithley are `autoDAQ*.py` and `Configs*.py`. I designed it to be as intuitive, configurable and modular as I could imagine within the time allocated for the project (including the testing and analysis). You can find detailed documentation on how to configure `Keysight UXR0104B` (triggering/channels/ranges/etc.) and `Keithley 2410` (which bias voltages to scan) for automatic DAQ in the `Configs*.py` scripts.
+
+
+Recommended: create a new `workspace` folder in `LabInstrumentControl` parent dirrectory and copy the files in `_templates/` to the `workspace`.
 
 About how to run this script: 
-- Copy ```config_preprocessor_template.config``` file into your workspace and adjust it to your setup.
+- Copy ```preprocessor_example.config``` file into your workspace and adjust it to your setup.
 - Copy ```config_template.py``` into your workspace (inside ```LabInstrumentControl```) and rename it. Open it in VS Code, or any other editor, and change the configurations as you want. Make sure to specify the preprocessor config path you created in the previous step in the your ```autoDAQ``` config file.
 - Copy ```autoDAQ_template.py``` into your workspace, change the ```import ... as MyConfig``` part to your new config file.
 - Open terminal (in VS Code or just a simple terminal). Make sure you ```cd``` into ```LabInstrumentControl``` (so that ```./``` is ```LabInstrumentControl```). Start the DAQ with this type of bash command (of course, you need to adjust the paths), specifying the number of CPUs you want to use for preprocessing :
@@ -105,19 +135,7 @@ python ./workspace_2ChannelSetup2026/autoDAQ.py --workers 4
 
 
 ### Appendix 1: About ```TimingDAQ_mod```
-This is based on the original ```TimingDAQ``` scripts with minor changes. The preprocessor will accept (and expects) the following arguments:
-
-- Usual (original ```TimingDAQ``` preprocessors):
-    - ```--input_file="/path/to/your/converted/root/file"```
-    - ```--config="/path/to/your/config/file"```
-    - ```--output_file"/path/to/your/intended/preprocessed/root/file"```
-    - ```--save_meas=true``` or ```--save_meas=false``` ― save waveforms (raw data) or not
-    - ```--verbose=true``` or ```--verbose=false``` ― self-explanatory
-
-- Additional arguments (now only in this repo's ```TimingDAQ_mod```).    
-    - ```--num_channels=2``` ― default: ```2```,
-    - ```--num_samples=5120``` ― default: ```5120```.
-
+See https://github.com/SamvelAghavelyan/TimingDAQ_mod for more information.
 
 ### Appendix 2: Useful links and manuals:
 - Keysight error messages: https://helpfiles.keysight.com/csg/e5072a/product_information/error_messages/error_messages.htm
@@ -144,130 +162,5 @@ MyProjectFolder
 - `1_ConvertedRoots` ―― where all the **converted** `.root` files will be created (and stored). This are the products of `convertH5ToRoot.py` script. The script just combines all specified `.h5` waveform files into a `.root` file that has the structure (like `channel, time, i_evt, ...`) needed for `TimingDAQ` preprocessing.
 - `2_PreprocessedRoots` ―― TiminDAQ-preprocessed (in reality - `TimingDAQ_mod`) files (with `amp, LP2_XX, t_peak, ...`).
 
-
-### Appendix 4: Connecting to Keithley 2410 using RS232 (recommended).
-It should be pretty straightforward. Connect the RS232 cable to Keithley 2410 rear RS232 port and PC rear RS232 port.
-Make sure that communication is setup correctly on Keithley:
-
-- Press front panel `Menu` $\rightarrow$ `Communication` $\rightarrow$ `RS-232`
-    
-    - `Baud Rate` $\rightarrow$ `9600`
-    - `Bits` $\rightarrow$ `8`
-    - `Parity` $\rightarrow$ `None`
-    - `Terminator` $\rightarrow$ `<CR>`
-    - `Flow Control` $\rightarrow$ `None`
-
-### Appendix 5: Connecting to Keithley 2410 using GPIB (NI GPIB-USBG-HS) instead of RS232.
-You most probably will need to install linux gpib (like `linux-gpib` kernel module) dependencies for Keithley 2410 communication with GPIB. 
-Make sure that communication is setup correctly on Keithley:
-
-- Press front panel `Menu` $\rightarrow$ `Communication` $\rightarrow$ `GPIB`
-    
-    - `Address` $\rightarrow$ `5` (or anything else - make sure you check the visa address if you do not use `5`)
-    - `GPIB Protocol` $\rightarrow$ `SCPI`
-
-Next steps:
-
-1. Clone `linux-gpib` repository. 
-~~~bash
-cd ~
-git clone https://github.com/coolshou/linux-gpib.git
-~~~ 
-
-2. Build the kernel drivers:
-~~~bash
-cd ~/linux-gpib/linux-gpib-kernel
-make -j"$(nproc)"
-~~~
-
-3. Install them:
-~~~bash
-sudo make install
-~~~
-
-4. Load NI USB-GPIB driver:
-~~~bash
-sudo modprob ni_usb_gpib
-~~~
-
-5. Build and install GPIB library:
-~~~bash
-cd ~linux-gpib/linux-gpib-user
-./configure --sysconfdir=/etc
-~~~
-
-6. After that:
-~~~bash
-make -j"$(nproc)"
-~~~
-
-7. Install:
-~~~bash
-sudo make install
-~~~
-
-8. 
-~~~bash
-sudo ldconfig
-~~~
-
-9. Check GPIB config:
-~~~bash
-nano /etc/gpib.conf
-~~~
-
-You should see: `board_type = "ni_usb_b"`. If you see other thing, change to this.
-
-10. Find Keithley's GPIB address:
-~~~bash
-sudo findlisteners
-~~~
-
-Should see `Listener at pad 5`, if you set Keithley address to 5.
-
-11. Add gpib group so your user can access the gpib utilities.
-~~~bash
-# First run this
-sudo groupadd gpib
-
-# Then this
-sudo usermod -aG gpib "$USER"
-~~~
-
-12. Final things:
-~~~bash
-# 1
-newgr gpib
-
-# 2
-sudo udevadm control --reload-rules
-
-# 3
-sudo udevadm trigger --action=change --subsystem-match=gpib_common
-
-# 4
-ls -l /dev/gpib0
-~~~
-
-If you see something like this: `crs-rw---- 1 root gpib ... /dev/gpib0`, after you ran the `ls ...` command, it's done.
-
-
-13. Test it:
-
-~~~python
-import pyvisa
-
-keithleyAddress = "GPIB::5::INSTR"
-rm = pyvisa.ResourceManager()
-
-keithley = rm.open_resource(keithleyAddress)
-keithley.timeout = 5000
-keithley.write_termination = "\n"           # use "\n" for GPIB 
-keithley.read_termination = "\n"            # use "\r" for RS232 
-
-print(keithley.query("*IDN?"))
-~~~
-
-You should see Keithley 2410's "identity". Something like: `KEITHLEY INSTRUMENTS INC., MODEL ...`
 
 ### Common problems and their solutions.

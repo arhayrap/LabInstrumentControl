@@ -11,7 +11,7 @@ packages=(
 
     pyvisa
     pyvisa-py
-    gpib-ctypes
+    # gpib-ctypes # will need to install manually
     zeroconf
 
     pyyaml

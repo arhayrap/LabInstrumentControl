@@ -188,7 +188,7 @@ class Keithley2410:
         elif current_range is not None:
             self.kSetSenseCurrentRange(current_range)
 
-    def kRamp(self, v_final: float, v_per_s: float = 10, v_step=1, stop_on_error: bool = True, delta_t_hardware=0.0328): # needs rewriting if accurate v_per_s is needed
+    def kRamp(self, v_final: float, v_per_s: float = 10, v_step=1, stop_on_error: bool = True, delta_t_hardware=0.0):
         '''Changes the voltage gradually at v_per_s (at least theoretically) till reaches v_final.<br>
         <br>
         !!! Note !!!

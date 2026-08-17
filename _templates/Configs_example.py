@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
-
+import numpy as np
 
 @dataclass(frozen=True)
 class iChannelConfig:
@@ -99,19 +99,18 @@ class iTrigger:
     • sequence_term_1_AND_state:        Whether the first sequence trigger AND condition is enabled. Accepts bool: True or False. <br>
     • sequence_term_2_AND_state:        Whether the second sequence trigger AND condition is enabled. Accepts bool: True or False. <br>
     '''
-    setup_trigger_or_not: bool = True            # if False, iTrigger attributes below will not be set.
+    
 
     mode: str = "SEQuence"
     sequence_reset: bool | None = None
     sequence_reset_time: float | None = None
     sequence_term_1: str = "EDGE1"
     sequence_term_2: str = "EDGE2"
-    edge_1_ch: int | None = None
-    edge_2_ch: int | None = None
+    sequence_term_1_ch: int | None = None
+    sequence_term_2_ch: int | None = None
     edge_1_polarity: str | None = None
     edge_2_polarity: str | None = None
-    sequence_term_1_AND_state: bool = False
-    sequence_term_2_AND_state: bool = True
+            
 
 
 class iScopeConfig:
@@ -127,19 +126,16 @@ class iScopeConfig:
     • auto_delete_h5:                  Whether to delete copied HDF5 waveform files from the oscilloscope. Accepts bool: True or False. <br>
     • scope_save_mreport:              Whether to save a measurement report on the oscilloscope. Accepts bool: True or False. <br>
     '''
+    # Scope initializing things
+    reset_scope_upon_initialization: bool = False
+
 
     # Some global attributes
     visa_address: str = "USB0::10893::36867::MY64060141::0::INSTR"
     visa_library_path: str = "/opt/keysight/iolibs/libktvisa32.so"
 
-    scope_timeout_ms: int = 600_000
+    scope_timeout_ms: int = 600_000*100000
     encoding: str = "latin_1"
-
-    # # Scope directories
-    # parent_dir: Path = Path(r"C:\Users\Public\Documents\Infiniium")
-    # h5_dir: Path = Path(parent_dir / "Waveforms")
-    # setups_dir: Path = Path(parent_dir / "Setups")
-    # mreports_dir: Path = Path(parent_dir / "MReports")
 
     # Scope directories
     parent_dir: str = r"C:\Users\Public\Documents\Infiniium"
@@ -148,43 +144,59 @@ class iScopeConfig:
     mreports_dir: str = parent_dir + r"\MReports"
 
 
+    # What do you need to set up:
+    setup_trigger_or_not: bool = False            # if False, iTrigger attributes below will not be set.
+    setup_vertical_or_not: bool = False
 
     # Additional
     auto_delete_h5: bool = False
     scope_save_mreport: bool = True
-    mcp_bias_voltage = 4500
+    mcp_bias_voltage = 4300
 
     # Configuring channels
-    ch1 = iChannelConfig(ch_num=1, display=False, save_channel=False)
+    ch1 = iChannelConfig(
+        ch_num=1,
+        display=True,
+        v_offset=-18.6e-3,
+        v_scale=10e-3,
+        save_channel=True,
+        trigger_level=0
+    )
 
     ch2 = iChannelConfig(
-        ch_num=2, 
-        display=True, 
-        label="MCP", 
-        trigger_level=-80e-3, 
-        bias_voltage=4500,
-        v_scale=215e-3,
-        v_offset=-500e-3,
-        polarity="NEGative",
-        save_channel=True
-        )
+        ch_num=2,
+        display=True,
+        v_offset=-21.6e-3,
+        v_scale=10e-3,
+        save_channel=True,
+        trigger_level=-20e-3,
+        polarity="NEGative"
+    )
 
     ch3 = iChannelConfig(
-        ch_num=3, 
-        display=True, 
-        label="LGAD", 
-        trigger_level=50e-3,
-        v_scale=100e-3,
-        v_offset=200e-3,
-        polarity="POSitive",
-        save_channel=True
-        )
+        ch_num=3,
+        display=True,
+        v_offset=-19.6e-3,
+        v_scale=10e-3,
+        save_channel=False,
+        trigger_level=0
+    )
 
-    ch4 = iChannelConfig(ch_num=4, display=False, save_channel=False)
+    ch4 = iChannelConfig(
+        ch_num=4,
+        label="MCP",
+        display=True,
+        v_offset=-136e-3,
+        v_scale=50e-3,
+        save_channel=False,
+        trigger_level=-100e-3,
+        polarity="NEGative"
+    )
 
     acquisition_config = iAcquisitionConfig(
-        filename_prefix="Jul23_Board5_",
-        segment_count=25
+        filename_prefix="T3x3_AC100_Aug4_chargeSharing_p5p6",
+        segment_count=20000
+        # segment_count=10
     )
 
     timebase_config = iTimebaseConfig(
@@ -199,10 +211,10 @@ class iScopeConfig:
         sequence_reset_time=25e-9,
         sequence_term_1="EDGE1",
         sequence_term_2="EDGE2",
-        edge_1_ch=ch2.ch_num,
-        edge_2_ch=ch3.ch_num,
+        sequence_term_1_ch=ch2.ch_num,
+        sequence_term_2_ch=ch4.ch_num,
         edge_1_polarity=ch2.polarity,
-        edge_2_polarity=ch3.polarity
+        edge_2_polarity=ch4.polarity,
     )
 
     channels = [ch1, ch2, ch3, ch4]
@@ -222,7 +234,7 @@ class iPC:
     • preprocessor_config:             Path to the NetScopeStandalone configuration file. <br>
     • preprocessor_save_waveforms:     Whether to save waveforms in the preprocessed ROOT files. Accepts bool: True or False. <br>
     '''
-    
+
     # Directories
     h5_dir: str = "../0_RawData_h5"
     conv_root_dir: str = "../1_ConvertedRoots"
@@ -231,7 +243,7 @@ class iPC:
 
     # Filepaths
     h5_to_root_converter_path: str = "reconstructionTools/convertH5ToROOT.py"
-    preprocessor: str = "../TimingDAQ_local/NetScopeStandaloneDat2Root"
+    preprocessor: str = "../TimingDAQ_mod/NetScopeStandaloneDat2Root"
     preprocessor_config: str = "configs/Keysight_v01.config"
 
 
@@ -245,4 +257,9 @@ class KeithleyConfig:
     • bias_voltages:        Bias voltages that the Keithley power supply will apply in order. Values are in [Volts]. <br>
     '''
 
-    bias_voltages = [-180, -182, -184, -186]
+    bias_voltages = [
+        -119, -118, -117, -116, -115, 
+        -114, -113, -112, -111, -110, 
+        -109,]
+
+    bias_voltages = [-109, -110, -111, -112, -113, -114, -115, -116, -117, -118, -119]
