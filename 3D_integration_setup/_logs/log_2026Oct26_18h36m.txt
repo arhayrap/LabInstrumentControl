@@ -1,0 +1,25 @@
+Log file:
+_logs/log_2026Oct26_18h36m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Saving waveform files on the scope...
+-----After trying to SAVE CHANNEL 1---------
+Errors:  -221
+-----After trying to SAVE CHANNEL 2---------
+Errors:  -221
+
+Saved scope files:
+C:\Users\Public\Documents\Infiniium\Waveforms\C0_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+
+Copying saved files from scope to PC...
+
+CLOSING Keysight UXR0104B Oscilloscope instance...
+ERROR closing Keysight UXR0104B Oscilloscope instance.
+DAQ ran  0.23414278030395508 seconds.
+
+Execution complete.
+Log file:
+_logs/log_2026Oct26_18h36m.txt

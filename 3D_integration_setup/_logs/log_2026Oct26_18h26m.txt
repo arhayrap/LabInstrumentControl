@@ -1,0 +1,21 @@
+Log file:
+_logs/log_2026Oct26_18h26m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Saving waveform files on the scope...
+-----After trying to SAVE CHANNEL 2---------
+Errors:  -221
+
+Saved scope files:
+C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+
+Copying saved files from scope to PC...
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 129 bytes written
+File size:          57.693 MB
+Response start:     0.024 s

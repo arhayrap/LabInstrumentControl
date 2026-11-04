@@ -1,0 +1,62 @@
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 1---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 2---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 3---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 4---------
+Errors:  0
+0
+
+Copying saved files from scope to PC...
+
+Copied PC files:
+
+Copying saved files from scope to PC...
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 118 bytes written
+Request seconds:  0.006900959007907659
+Number of digits:  5
+File size:          0.017 MB
+Response start:     0.007 s
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 223, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 204, in main
+    KeysightScope.iCopyFile(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        scope_filepath=filepath_to_copy_from_scope,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        get_filepath=True
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/../classes/KeysightUXR_class.py", line 819, in iCopyFile
+    data = self.instrument.read_bytes(
+        number_to_read,
+        chunk_size=number_to_read,
+        break_on_termchar=False
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 394, in read_bytes
+    chunk, status = self.visalib.read(self.session, size)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/ctwrapper/functions.py", line 2339, in read
+    ret = library.viRead(session, buffer, count, byref(return_count))
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/ctwrapper/highlevel.py", line 227, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/highlevel.py", line 252, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_ABORT (-1073807312): User abort occurred during transfer.

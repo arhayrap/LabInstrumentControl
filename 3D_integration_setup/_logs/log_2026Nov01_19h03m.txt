@@ -1,0 +1,18 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000000,INR,012033,DDR,000000,CMR,000000,EXR,000000,URR,000000
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+TRSE EDGE,SR,EX,HT,OFF
+C8:TRSL POS
+Skipping trigger setup.
+-----After HORIZONTAL setup----------------
+Errors:  25
+None
+Errors:  25
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 594, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 375, in main
+    wait_for_acquisition_done(scope=scope, poll_time_s=10.0)
+                                    ^^^^^
+NameError: name 'scope' is not defined

@@ -1,0 +1,23 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000000,INR,003840,DDR,000000,CMR,000000,EXR,000000,URR,000000
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+Skipping trigger setup.
+-----After HORIZONTAL setup----------------
+Errors:  -113
+None
+Errors:  -420
+TRSE EDGE,SR,EX,HT,OFF
+C8:TRSL POS
+
+CLOSING Keysight UXR0104B Oscilloscope instance...
+Keysight UXR0104B Oscilloscope instance CLOSED
+
+CLOSING Keithley 2410 Power Supply instance...
+ERROR closing Keithley 2410 Power Supply instance.
+
+Waiting for processing jobs...
+DAQ ran  2.8039910793304443 seconds.
+
+Execution complete.
+Log file:
+_logs/log_2026Nov01_17h48m.txt

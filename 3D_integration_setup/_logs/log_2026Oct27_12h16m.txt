@@ -1,0 +1,56 @@
+Log file:
+_logs/log_2026Oct27_12h16m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Saving waveform files on the scope...
+['C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5', 'C2_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5']
+
+Copying saved files from scope to PC...
+Copying from scope: C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 83 bytes written
+Request seconds:  0.20195095900271554
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.202 s
+Transferred:        0.000 MB
+Transfer time:      0.001 s
+Transfer speed:     0.001 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.001 s
+Scope errors: -256
+
+Copied PC files:
+Copying from scope: C2_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+Copying to PC:      ../0_RawData_h5/C2_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 83 bytes written
+Request seconds:  0.003897083006449975
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.004 s
+Transferred:        0.000 MB
+Transfer time:      0.001 s
+Transfer speed:     0.002 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.001 s
+Scope errors: -256
+
+Copied PC files:
+../0_RawData_h5/C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+../0_RawData_h5/C2_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+Before submitting the processes
+After submitting the processes
+RUN 0 processing started in the background.
+ALL DAQs COMPLETE.
+
+[RUN 0 PROCESSING STARTED]
+
+[RUN 0 H5 TO ROOT]
+/Library/Frameworks/Python.framework/Versions/3.14/bin/python3 reconstructionTools/convertH5ToROOT.py ../0_RawData_h5/C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5 ../0_RawData_h5/C2_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5 -o ../1_ConvertedRoots/conv_C1_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.root
+[RUN 0 H5 TO ROOT] /Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/PITLab/LabInstrumentControl/3D_integration_setup/reconstructionTools/convertH5ToROOT.py': [Errno 2] No such file or directory

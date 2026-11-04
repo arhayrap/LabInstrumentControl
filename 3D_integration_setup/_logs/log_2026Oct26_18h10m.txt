@@ -1,0 +1,15 @@
+Log file:
+_logs/log_2026Oct26_18h10m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Saving waveform files on the scope...
+
+CLOSING Keysight UXR0104B Oscilloscope instance...
+ERROR closing Keysight UXR0104B Oscilloscope instance.
+DAQ ran  0.03187894821166992 seconds.
+
+Execution complete.
+Log file:
+_logs/log_2026Oct26_18h10m.txt

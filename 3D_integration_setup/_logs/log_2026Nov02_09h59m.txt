@@ -1,0 +1,35 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000000,INR,012033,DDR,000000,CMR,000000,EXR,000000,URR,000000
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+TRSE EDGE,SR,EX,HT,OFF
+C8:TRSL POS
+Skipping trigger setup.
+-----After HORIZONTAL setup----------------
+Errors:  0
+None
+Errors:  25
+[KAcquisition not done yet. Waiting... 0.0 s[KAcquisition done. Total waiting time: 10.0 s
+-----After SINGLE ACQUISITION---------------
+Errors:  0
+-----After STOP ----------------------------
+Errors:  0
+
+Saving waveform files on the scope...
+-----After trying to SAVE CHANNEL 1---------
+Errors:  0
+-----After trying to SAVE CHANNEL 2---------
+Errors:  0
+-----After trying to SAVE CHANNEL 3---------
+Errors:  0
+-----After trying to SAVE CHANNEL 4---------
+Errors:  0
+
+Saved scope files:
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch1_NEv100_BV117000mV_MCP4400.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch2_NEv100_BV117000mV_MCP4400.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch3_NEv100_BV117000mV_MCP4400.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch4_NEv100_BV117000mV_MCP4400.h5
+
+Copying saved files from scope to PC...
+
+Copied PC files:

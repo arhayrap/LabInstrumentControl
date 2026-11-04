@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/ConnectToLecroy.py", line 333, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/ConnectToLecroy.py", line 247, in main
+    scope.write("GRDS FULL")
+    ^^^^^^^^^^^
+AttributeError: 'TLecroyWaverunner8204' object has no attribute 'write'. Did you mean: 'iWrite'?

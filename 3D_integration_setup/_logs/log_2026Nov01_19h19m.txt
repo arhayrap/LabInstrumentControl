@@ -1,0 +1,4 @@
+<class 'Configs.iAcquisitionConfig'>
+None
+
+Execution stopped by Ctrl+C.

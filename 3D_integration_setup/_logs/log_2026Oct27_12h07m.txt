@@ -1,0 +1,15 @@
+Log file:
+_logs/log_2026Oct27_12h07m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Saving waveform files on the scope...
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DaqAndProcessing.py", line 344, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DaqAndProcessing.py", line 274, in main
+    filepaths_to_copy_from_scope.append(filepath_to_copy_from_scope)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'filepath_to_copy_from_scope' where it is not associated with a value

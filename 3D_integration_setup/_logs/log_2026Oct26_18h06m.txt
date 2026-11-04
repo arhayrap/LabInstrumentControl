@@ -1,0 +1,15 @@
+Log file:
+_logs/log_2026Oct26_18h06m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Copying saved files from scope to PC...
+
+CLOSING Keysight UXR0104B Oscilloscope instance...
+ERROR closing Keysight UXR0104B Oscilloscope instance.
+DAQ ran  0.020590782165527344 seconds.
+
+Execution complete.
+Log file:
+_logs/log_2026Oct26_18h06m.txt

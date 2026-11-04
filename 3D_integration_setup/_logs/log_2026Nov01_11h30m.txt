@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 289, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 148, in main
+    print(LecroyScope.iQuery("*IDN?"))
+          ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/../classes/TLecroyWaverunner8204.py", line 65, in iQuery
+    return self.instrument.query(command).strip()
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 696, in query
+    self.write(message)
+    ~~~~~~~~~~^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 213, in write
+    count = self.write_raw(message.encode(enco))
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 173, in write_raw
+    return self.visalib.write(self.session, message)[0]
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/ctwrapper/functions.py", line 2798, in write
+    ret = library.viWrite(session, data, len(data), byref(return_count))
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/ctwrapper/highlevel.py", line 227, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/highlevel.py", line 252, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_RSRC_BUSY (-1073807246): The resource is valid, but VISA cannot currently access it.

@@ -1,0 +1,48 @@
+C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.h5
+Copying from scope: C:/Users/Public/Documents/Infiniium/Waveforms/C1_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.trc
+Copying to PC:      ./C1_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.trc
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 171 bytes written
+Request seconds:  0.008959749975474551
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.009 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.003 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.001 s
+Scope errors: -222
+C:\Users\Public\Documents\Infiniium\Waveforms\C2_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.h5
+Copying from scope: C:/Users/Public/Documents/Infiniium/Waveforms/C2_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.trc
+Copying to PC:      ./C2_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.trc
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 171 bytes written
+Request seconds:  0.00763383400044404
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.008 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.003 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.000 s
+Scope errors: 25
+C:\Users\Public\Documents\Infiniium\Waveforms\C3_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.h5
+Copying from scope: C:/Users/Public/Documents/Infiniium/Waveforms/C3_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.trc
+Copying to PC:      ./C3_DJ100W50B9_bv117_mcp4400_trigExtCh2_MCP_channel_only_10mV_HighSensHighBandwidth_zoomedin_9p5mV_30000.trc
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 171 bytes written
+Request seconds:  0.007944999990286306
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.008 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.003 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.000 s
+Scope errors: 38

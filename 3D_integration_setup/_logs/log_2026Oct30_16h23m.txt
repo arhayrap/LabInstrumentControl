@@ -1,0 +1,12 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000000,INR,008193,DDR,000000,CMR,000000,EXR,000000,URR,000000
+TRSE EDGE,SR,C1,HT,OFF
+C1:TRSL POS
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/ConnectToLecroy.py", line 285, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/ConnectToLecroy.py", line 180, in main
+    scope.iStartAcquisitionMode()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TLecroyWaverunner8204' object has no attribute 'iStartAcquisitionMode'. Did you mean: 'iSetAcquisitionMode'?

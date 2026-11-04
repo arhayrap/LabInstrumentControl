@@ -1,0 +1,35 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000000,INR,012033,DDR,000000,CMR,000000,EXR,000000,URR,000000
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+TRSE EDGE,SR,EX,HT,OFF
+C8:TRSL POS
+Skipping trigger setup.
+-----After HORIZONTAL setup----------------
+Errors:  0
+None
+Errors:  25
+[KAcquisition not done yet. Waiting... 0.0 s[KAcquisition not done yet. Waiting... 10.0 s[KAcquisition not done yet. Waiting... 20.0 s[KAcquisition not done yet. Waiting... 30.0 s[KAcquisition not done yet. Waiting... 40.0 s[KAcquisition not done yet. Waiting... 50.0 s[KAcquisition not done yet. Waiting... 60.0 s[KAcquisition not done yet. Waiting... 70.0 s[KAcquisition not done yet. Waiting... 80.0 s[KAcquisition not done yet. Waiting... 90.0 s[KAcquisition not done yet. Waiting... 100.1 s[KAcquisition not done yet. Waiting... 110.1 s[KAcquisition not done yet. Waiting... 120.1 s[KAcquisition not done yet. Waiting... 130.1 s[KAcquisition not done yet. Waiting... 140.1 s[KAcquisition not done yet. Waiting... 150.1 s[KAcquisition not done yet. Waiting... 160.1 s[KAcquisition not done yet. Waiting... 170.1 s[KAcquisition not done yet. Waiting... 180.1 s[KAcquisition not done yet. Waiting... 190.1 s[KAcquisition not done yet. Waiting... 200.1 s[KAcquisition not done yet. Waiting... 210.1 s[KAcquisition not done yet. Waiting... 220.1 s[KAcquisition not done yet. Waiting... 230.1 s[KAcquisition not done yet. Waiting... 240.1 s[KAcquisition not done yet. Waiting... 250.1 s[KAcquisition not done yet. Waiting... 260.1 s[KAcquisition not done yet. Waiting... 270.1 s[KAcquisition not done yet. Waiting... 280.1 s[KAcquisition not done yet. Waiting... 290.2 s[KAcquisition not done yet. Waiting... 300.2 s[KAcquisition not done yet. Waiting... 310.2 s[KAcquisition not done yet. Waiting... 320.2 s[KAcquisition not done yet. Waiting... 330.2 s[KAcquisition not done yet. Waiting... 340.2 s[KAcquisition not done yet. Waiting... 350.2 s[KAcquisition not done yet. Waiting... 360.2 s[KAcquisition not done yet. Waiting... 370.2 s[KAcquisition not done yet. Waiting... 380.2 s[KAcquisition not done yet. Waiting... 390.2 s[KAcquisition not done yet. Waiting... 400.2 s[KAcquisition not done yet. Waiting... 410.3 s[KAcquisition not done yet. Waiting... 420.3 s[KAcquisition not done yet. Waiting... 430.3 s[KAcquisition not done yet. Waiting... 440.3 s[KAcquisition not done yet. Waiting... 450.3 s[KAcquisition not done yet. Waiting... 460.3 s[KAcquisition not done yet. Waiting... 470.3 s[KAcquisition not done yet. Waiting... 480.3 s[KAcquisition not done yet. Waiting... 490.3 s[KAcquisition not done yet. Waiting... 500.3 s[KAcquisition not done yet. Waiting... 510.4 s[KAcquisition not done yet. Waiting... 520.4 s[KAcquisition not done yet. Waiting... 530.4 s[KAcquisition not done yet. Waiting... 540.4 s[KAcquisition not done yet. Waiting... 550.4 s[KAcquisition not done yet. Waiting... 560.4 s[KAcquisition not done yet. Waiting... 570.4 s[KAcquisition not done yet. Waiting... 580.4 s[KAcquisition not done yet. Waiting... 590.4 s[KAcquisition not done yet. Waiting... 600.4 s[KAcquisition not done yet. Waiting... 610.4 s[KAcquisition not done yet. Waiting... 620.5 s[KAcquisition not done yet. Waiting... 630.5 s[KAcquisition not done yet. Waiting... 640.5 s[KAcquisition not done yet. Waiting... 650.5 s[KAcquisition not done yet. Waiting... 660.5 s[KAcquisition not done yet. Waiting... 670.5 s[KAcquisition not done yet. Waiting... 680.5 s[KAcquisition not done yet. Waiting... 690.5 s[KAcquisition not done yet. Waiting... 700.5 s[KAcquisition not done yet. Waiting... 710.5 s[KAcquisition not done yet. Waiting... 720.6 s[KAcquisition not done yet. Waiting... 730.6 s[KAcquisition not done yet. Waiting... 740.6 s[KAcquisition not done yet. Waiting... 750.6 s[KAcquisition not done yet. Waiting... 760.6 s[KAcquisition not done yet. Waiting... 770.6 s[KAcquisition not done yet. Waiting... 780.6 s[KAcquisition not done yet. Waiting... 790.6 s[KAcquisition not done yet. Waiting... 800.6 s[KAcquisition not done yet. Waiting... 810.6 s[KAcquisition not done yet. Waiting... 820.6 s[KAcquisition not done yet. Waiting... 830.7 s[KAcquisition not done yet. Waiting... 840.7 s[KAcquisition not done yet. Waiting... 850.7 s[KAcquisition not done yet. Waiting... 860.7 s[KAcquisition not done yet. Waiting... 870.7 s[KAcquisition not done yet. Waiting... 880.7 s[KAcquisition not done yet. Waiting... 890.7 s[KAcquisition not done yet. Waiting... 900.7 s[KAcquisition not done yet. Waiting... 910.7 s[KAcquisition not done yet. Waiting... 920.7 s[KAcquisition not done yet. Waiting... 930.7 s[KAcquisition not done yet. Waiting... 940.7 s[KAcquisition not done yet. Waiting... 950.7 s[KAcquisition not done yet. Waiting... 960.7 s[KAcquisition not done yet. Waiting... 970.7 s[KAcquisition not done yet. Waiting... 980.7 s[KAcquisition not done yet. Waiting... 990.8 s[KAcquisition not done yet. Waiting... 1000.8 s[KAcquisition not done yet. Waiting... 1010.8 s[KAcquisition not done yet. Waiting... 1020.8 s[KAcquisition not done yet. Waiting... 1030.8 s[KAcquisition not done yet. Waiting... 1040.8 s[KAcquisition not done yet. Waiting... 1050.8 s[KAcquisition not done yet. Waiting... 1060.8 s[KAcquisition done. Total waiting time: 1070.8 s
+-----After SINGLE ACQUISITION---------------
+Errors:  0
+-----After STOP ----------------------------
+Errors:  0
+
+Saving waveform files on the scope...
+-----After trying to SAVE CHANNEL 1---------
+Errors:  0
+-----After trying to SAVE CHANNEL 2---------
+Errors:  0
+-----After trying to SAVE CHANNEL 3---------
+Errors:  0
+-----After trying to SAVE CHANNEL 4---------
+Errors:  0
+
+Saved scope files:
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch1_NEv20000_BV117000mV_MCP4400.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch2_NEv20000_BV117000mV_MCP4400.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch3_NEv20000_BV117000mV_MCP4400.h5
+C:\Users\Public\Documents\Infiniium\Waveforms\DJ_LGAD_50um_strip_Ch4_NEv20000_BV117000mV_MCP4400.h5
+
+Copying saved files from scope to PC...
+
+Copied PC files:

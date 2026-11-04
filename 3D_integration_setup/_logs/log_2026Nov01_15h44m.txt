@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 380, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 148, in main
+    keithley = Keithley2410()
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/../classes/Keithley2410_class.py", line 25, in __init__
+    self.keithley = self.rm.open_resource(port)
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/highlevel.py", line 3265, in open_resource
+    info = self.resource_info(resource_name, extended=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/highlevel.py", line 3190, in resource_info
+    ret, _err = self.visalib.parse_resource_extended(
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.session, resource_name
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/ctwrapper/functions.py", line 2079, in parse_resource_extended
+    ret = library.viParseRsrcEx(
+        session,
+    ...<5 lines>...
+        alias_if_exists,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/ctwrapper/highlevel.py", line 227, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pyvisa/highlevel.py", line 252, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_RSRC_NFOUND (-1073807343): Insufficient location information or the requested device or resource is not present in the system.

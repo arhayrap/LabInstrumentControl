@@ -1,0 +1,6 @@
+Log file:
+_logs/log_2026Oct26_18h46m.txt
+Processing workers:
+2
+
+Something went wrong while copying

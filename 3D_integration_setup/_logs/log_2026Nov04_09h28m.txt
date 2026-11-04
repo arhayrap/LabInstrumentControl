@@ -1,0 +1,9 @@
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 230, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 185, in main
+    filepaths_to_copy_from_scope.append(filepath_to_copy_from_scope)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'filepath_to_copy_from_scope' where it is not associated with a value

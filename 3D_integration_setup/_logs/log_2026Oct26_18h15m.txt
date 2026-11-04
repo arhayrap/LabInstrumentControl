@@ -1,0 +1,19 @@
+Log file:
+_logs/log_2026Oct26_18h15m.txt
+Processing workers:
+2
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+
+Saving waveform files on the scope...
+-----After trying to SAVE CHANNEL 2---------
+Errors:  -223
+
+Saved scope files:
+C:\Users\Public\Documents\Infiniium\Waveforms\CiChannelConfig(ch_num=2, label=2, display=True, v_scale=0.01, v_range=None, v_offset=-0.0216, polarity='NEGative', trigger_level=-0.02, probe=1, bias_voltage=None, save_channel=True)_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+
+Copying saved files from scope to PC...
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\CiChannelConfig(ch_num=2, label=2, display=True, v_scale=0.01, v_range=None, v_offset=-0.0216, polarity='NEGative', trigger_level=-0.02, probe=1, bias_voltage=None, save_channel=True)_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+Copying to PC:      ../0_RawData_h5/CiChannelConfig(ch_num=2, label=2, display=True, v_scale=0.01, v_range=None, v_offset=-0.0216, polarity='NEGative', trigger_level=-0.02, probe=1, bias_voltage=None, save_channel=True)_DJ100W50B9_bv120_mcp4400_trigExt_MCP_channel_only_3000_15mV.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 310 bytes written

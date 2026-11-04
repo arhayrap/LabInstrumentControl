@@ -1,0 +1,15 @@
+<class 'Configs.iAcquisitionConfig'>
+['__annotate_func__', '__annotations_cache__', '__class__', '__dataclass_fields__', '__dataclass_params__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__firstlineno__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__match_args__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__replace__', '__repr__', '__setattr__', '__sizeof__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__', 'filename_prefix', 'interpolation', 'mode', 'raw_data_extension', 'sample_per_segment', 'sample_rate', 'save_h5_header', 'save_which_segments', 'segment_count']
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000016,INR,012033,DDR,000000,CMR,000000,EXR,000024,URR,000000
+Keysight UXR Identity: KEYSIGHT TECHNOLOGIES,UXR0104B,MY64060141,11.71.00021
+TRSE EDGE,SR,EX,HT,OFF
+C8:TRSL POS
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 598, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 226, in main
+    f"Ch{channel.ch_num}_"
+         ^^^^^^^
+UnboundLocalError: cannot access local variable 'channel' where it is not associated with a value

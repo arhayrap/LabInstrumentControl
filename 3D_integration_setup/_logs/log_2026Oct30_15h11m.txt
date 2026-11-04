@@ -1,0 +1,10 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000004,ESR,000000,INR,008192,DDR,000000,CMR,000000,EXR,000000,URR,000000
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/ConnectToLecroy.py", line 387, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/ConnectToLecroy.py", line 269, in main
+    scope.iWrite(f"C{i}:TDIV {TDiv} ns")
+                              ^^^^
+NameError: name 'TDiv' is not defined. Did you mean: 'TDivs'?

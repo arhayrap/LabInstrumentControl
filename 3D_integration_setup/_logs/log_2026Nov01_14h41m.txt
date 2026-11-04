@@ -1,0 +1,12 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000016,INR,012033,DDR,000000,CMR,000000,EXR,000024,URR,000000
+TRSE EDGE,SR,C1,HT,OFF
+C1:TRSL POS
+Traceback (most recent call last):
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 322, in <module>
+    main()
+    ~~~~^^
+  File "/Users/PITLab/LabInstrumentControl/3D_integration_setup/DoubleScopeTriggering.py", line 201, in main
+    LecrorScope.iWrite(f"vbs \'app.Math.F{i}.MathMode = 'OneOperator'\'")
+    ^^^^^^^^^^^
+NameError: name 'LecrorScope' is not defined. Did you mean: 'LecroyScope'?
