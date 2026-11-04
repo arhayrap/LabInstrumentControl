@@ -16,7 +16,8 @@ import numpy as np
 class Keithley2410:
     '''Keithley 2410 pyvisa object instance.'''
 
-    def __init__(self, port="ASRL/dev/ttyS0::INSTR", baud_rate=9600, timeout=6000000, rm=None):
+    # def __init__(self, port="ASRL/dev/ttyS0::INSTR", baud_rate=9600, timeout=6000000, rm=None):
+    def __init__(self, port="USB0::0x3923::0x709B::017A2CE1::RAW", baud_rate=9600, timeout=6000000, rm=None):
         '''Creates the pyvisa Keithley instance with the resource manager. <br>
         If rm is not provided, a new pyvisa.ResourceManager() will be created. <br>
         Change port to your Keithley 2410's pyvisa address.'''

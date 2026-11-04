@@ -12,7 +12,7 @@ import pyvisa
 import time
 
 DEFAULT_KEYSIGHT_VISA_ADDRESS = "USB0::10893::36867::MY64060141::0::INSTR"
-DEFAULT_KEYSIGHT_VISA_LIBRARY_PATH = "/opt/keysight/iolibs/libktvisa32.so"
+DEFAULT_KEYSIGHT_VISA_LIBRARY_PATH = "" # "/Library/Preferences/NIvisa/visaconf.ini" # "/opt/keysight/iolibs/libktvisa32.so"
 SCOPE_WAVEFORM_DIR = r"C:\Users\Public\Documents\Infiniium\Waveforms"
 
 
@@ -757,7 +757,7 @@ class InfiniiumScope:
             request_seconds = (
                 time.perf_counter() - request_start
             )
-
+            print("Request seconds: ", request_seconds)
             if first_byte != b"#":
                 raise RuntimeError(
                     "Expected binary block header '#', "
@@ -779,6 +779,7 @@ class InfiniiumScope:
                 )
 
             number_of_digits = int(number_of_digits_byte)
+            print("Number of digits: ", number_of_digits)
 
             byte_count_text = self.instrument.read_bytes(
                 number_of_digits,
