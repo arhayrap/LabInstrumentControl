@@ -1,0 +1,32 @@
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 1---------
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 224, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 186, in main
+    KeysightScope.iPrintScopeErrors(f"-----After trying to SAVE CHANNEL {channel.ch_num}---------")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/../classes/KeysightUXR_class.py", line 463, in iPrintScopeErrors
+    print("Errors: ", self.iReadErrors())
+                      ~~~~~~~~~~~~~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/../classes/KeysightUXR_class.py", line 504, in iReadErrors
+    return self.instrument.query(":SYSTem:ERRor?").strip()
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 702, in query
+    return self.read()
+           ~~~~~~~~~^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 521, in read
+    message = self._read_raw().decode(enco)
+              ~~~~~~~~~~~~~~^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/resources/messagebased.py", line 475, in _read_raw
+    chunk, status = self.visalib.read(self.session, size)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/ctwrapper/functions.py", line 2339, in read
+    ret = library.viRead(session, buffer, count, byref(return_count))
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/ctwrapper/highlevel.py", line 227, in _return_handler
+    return self.handle_return_value(session, ret_value)  # type: ignore
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/highlevel.py", line 252, in handle_return_value
+    raise errors.VisaIOError(rv)
+pyvisa.errors.VisaIOError: VI_ERROR_INP_PROT_VIOL (-1073807305): Device reported an input protocol error during transfer.

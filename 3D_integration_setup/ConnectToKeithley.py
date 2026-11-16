@@ -22,7 +22,7 @@ sys.path.append('../')
 # Local imports
 from classes.Keithley2410_class import Keithley2410
 from classes.KeysightUXR_class import InfiniiumScope
-from classes.TLecroyWaverunner8204 import TLecroyWaverunner8204
+from classes.TLecroyWaverunner8208 import TLecroyWaverunner8208
 import Configs as MyConfig
 
 H5_TO_ROOT_SCRIPT = MyConfig.iPC.h5_to_root_converter_path
@@ -126,25 +126,28 @@ def main():
     processing_pool = ThreadPoolExecutor(max_workers=arguments.workers)
     processing_jobs = []
     
-    keithley.kClearStatus()
-    keithley.kConfigureVoltageSource()
+    keithley = Keithley2410()
+    keithley.kQuery("*IDN?")
+    
+    # keithley.kClearStatus()
+    # keithley.kConfigureVoltageSource()
     
     # keithley.kRamp(v_final=0, v_per_s=10, v_step=0.5)
     # keithley.kRampDown(v_per_s=10)
     # keithley.kOutputOff()
     
-    keithley.kOutputOn()
-    keithley.kSetMeasureFunctionCurrent()
-    keithley.kSetVoltageSourceRange(1000)
+    # keithley.kOutputOn()
+    # keithley.kSetMeasureFunctionCurrent()
+    # keithley.kSetVoltageSourceRange(1000)
     
-    keithley.kRamp(v_final=bv, v_per_s=2, v_step=0.5)
-    keithley.kWrite(":DISP:ENAB ON")
-    keithley.kWrite(":SYST:LOC")
+    # keithley.kRamp(v_final=bv, v_per_s=2, v_step=0.5)
+    # keithley.kWrite(":DISP:ENAB ON")
+    # keithley.kWrite(":SYST:LOC")
 
-    print(f"RUN: {run_number}. BIAS VOLTAGE: {bv} Volts")
-    print("\n\n")
-    print(f"-----After Ramping to {bv}Volts------------")
-    print(f"Intended bias voltage: {keithley.kReadSetVoltage()}V.    ", f"\nActual voltage: {keithley.kMeasureVoltage()}.")
+    # print(f"RUN: {run_number}. BIAS VOLTAGE: {bv} Volts")
+    # print("\n\n")
+    # print(f"-----After Ramping to {bv}Volts------------")
+    # print(f"Intended bias voltage: {keithley.kReadSetVoltage()}V.    ", f"\nActual voltage: {keithley.kMeasureVoltage()}.")
 
 
 if __name__ == "__main__":

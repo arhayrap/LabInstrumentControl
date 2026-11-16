@@ -1,0 +1,2 @@
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 1---------

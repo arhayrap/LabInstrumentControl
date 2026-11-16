@@ -1,0 +1,61 @@
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 148, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 144, in main
+    TLecroyWaverunnerScope = TLecroyWaverunner8208()
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/../classes/TLecroyWaverunner8208.py", line 46, in __init__
+    self.instrument = self.rm.open_resource(visa_address)
+                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/highlevel.py", line 3302, in open_resource
+    res.open(access_mode, open_timeout)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/resources/resource.py", line 290, in open
+    self.session, status = self._resource_manager.open_bare_resource(
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._resource_name, access_mode, open_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa/highlevel.py", line 3227, in open_bare_resource
+    return self.visalib.open(self.session, resource_name, access_mode, open_timeout)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa_py/highlevel.py", line 196, in open
+    sess = cls(session, resource_name, parsed, open_timeout)
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa_py/sessions.py", line 329, in __init__
+    self.after_parsing()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa_py/usb.py", line 99, in after_parsing
+    self.interface = self._intf_cls(
+                     ~~~~~~~~~~~~~~^
+        int(self.parsed.manufacturer_id, 0),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        int(self.parsed.model_code, 0),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.parsed.serial_number,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa_py/protocols/usbtmc.py", line 315, in __init__
+    self._capabilities = self._get_capabilities()
+                         ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/pyvisa_py/protocols/usbtmc.py", line 343, in _get_capabilities
+    c = self.usb_dev.ctrl_transfer(
+        usb.util.build_request_type(
+    ...<8 lines>...
+        timeout=self.timeout,
+    )
+  File "/home/daq/my_venv/lib/python3.14/site-packages/usb/core.py", line 1091, in ctrl_transfer
+    self._ctx.managed_claim_interface(self, interface_number)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/usb/core.py", line 113, in wrapper
+    return f(self, *args, **kwargs)
+  File "/home/daq/my_venv/lib/python3.14/site-packages/usb/core.py", line 180, in managed_claim_interface
+    self.backend.claim_interface(self.handle, i)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/usb/backend/libusb1.py", line 833, in claim_interface
+    _check(self.lib.libusb_claim_interface(dev_handle.handle, intf))
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/my_venv/lib/python3.14/site-packages/usb/backend/libusb1.py", line 604, in _check
+    raise USBError(_strerror(ret), ret, _libusb_errno[ret])
+usb.core.USBError: [Errno 16] Resource busy

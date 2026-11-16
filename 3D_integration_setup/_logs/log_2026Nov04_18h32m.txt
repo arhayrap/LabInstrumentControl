@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 155, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 148, in main
+    TLecroyWaverunnerScope.iCopyFile(path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+TypeError: TLecroyWaverunner8208.iCopyFile() missing 1 required positional argument: 'pc_output_directory'

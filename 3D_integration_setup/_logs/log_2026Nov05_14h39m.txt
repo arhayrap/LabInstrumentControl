@@ -1,0 +1,25 @@
+
+Copying saved files from scope to PC...
+
+Copied PC files:
+
+Copying saved files from scope to PC...
+Copying from scope: C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    10.000 MB
+Before VISA write
+After VISA write: 72 bytes written
+Request seconds:  0.0007845269999506854
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.001 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.003 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.016 s
+Scope errors: -256
+0
+
+Copied PC files:
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5

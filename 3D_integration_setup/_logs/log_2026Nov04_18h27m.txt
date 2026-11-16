@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 154, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 146, in main
+    TLecroyWaverunnerScope.write(f"TRFL? DISK,HDD,FILE, '{path}'")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TLecroyWaverunner8208' object has no attribute 'write'. Did you mean: 'iWrite'?

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 223, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromKeysight.py", line 144, in main
+    KeysightScope = InfiniiumScope()
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/../classes/KeysightUXR_class.py", line 43, in __init__
+    self.rm = pyvisa.ResourceManager(visa_library_path)
+              ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/.venv/lib/python3.14/site-packages/pyvisa/highlevel.py", line 2993, in __new__
+    visa_library = open_visa_library(visa_library)
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/.venv/lib/python3.14/site-packages/pyvisa/highlevel.py", line 2900, in open_visa_library
+    wrapper = _get_default_wrapper()
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/.venv/lib/python3.14/site-packages/pyvisa/highlevel.py", line 2859, in _get_default_wrapper
+    raise ValueError(
+        "Could not locate a VISA implementation. Install either the IVI binary or pyvisa-py."
+    )
+ValueError: Could not locate a VISA implementation. Install either the IVI binary or pyvisa-py.

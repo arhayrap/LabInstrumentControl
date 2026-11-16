@@ -1,0 +1,21 @@
+Copying from scope: D:/Waveforms/*
+Copying to PC:      /home/daq/LabInstrumentControl/3D_integration_setup/*
+VISA chunk size:    1.049 MB
+Requestion a file from the scope.
+Before VISA write
+After VISA write: 32 bytes written
+Read bytes
+first byte: b'R'
+request_seconds: 0.0005459490002976963
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 155, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 148, in main
+    TLecroyWaverunnerScope.iCopyFile(scope_filepath = path, pc_output_directory = "/home/daq/LabInstrumentControl/3D_integration_setup/")
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/../classes/TLecroyWaverunner8208.py", line 767, in iCopyFile
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: Expected binary block header '#', but got b'R'.

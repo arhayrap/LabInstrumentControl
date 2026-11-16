@@ -22,7 +22,7 @@ sys.path.append('../')
 # Local imports
 from classes.Keithley2410_class import Keithley2410
 from classes.KeysightUXR_class import InfiniiumScope
-from classes.TLecroyWaverunner8204 import TLecroyWaverunner8204
+from classes.TLecroyWaverunner8208 import TLecroyWaverunner8208
 import Configs as MyConfig
 
 H5_TO_ROOT_SCRIPT = MyConfig.iPC.h5_to_root_converter_path
@@ -144,6 +144,9 @@ def main():
     KeysightScope = InfiniiumScope()
     # LecroyScope = TLecroyWaverunner8204()
     
+    
+    KeysightScope.instrument.timeout = 60000
+    
     # keithley = Keithley2410()
     # keithley.kQuery("*IDN?")
     
@@ -153,6 +156,7 @@ def main():
             channels_to_save.append(channel)
 
     filepaths_to_copy_from_scope = []
+    '''
     for channel in channels_to_save:
 
         filename = (
@@ -165,26 +169,28 @@ def main():
         
         filename = (
             "C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5"
+            # "DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5"
         )
+        
+        # print(MyConfig.iScopeConfig.h5_dir, filename)
 
-        print(MyConfig.iScopeConfig.h5_dir, filename)
+        # filepath_to_copy_from_scope = (
+        #     KeysightScope.iSaveSingleChannelWaveform(
+        #         channel_number=channel.ch_num,
+        #         scope_saving_directory=(MyConfig.iScopeConfig.h5_dir),
+        #         filename=filename,
+        #         file_format=(MyConfig.iScopeConfig.acquisition_config.raw_data_extension),
+        #         header_state=(MyConfig.iScopeConfig.acquisition_config.save_h5_header),
+        #         get_filepath=True
+        #     )
+        # )
 
-        filepath_to_copy_from_scope = (
-            KeysightScope.iSaveSingleChannelWaveform(
-                channel_number=channel.ch_num,
-                scope_saving_directory=(MyConfig.iScopeConfig.h5_dir),
-                filename=filename,
-                file_format=(MyConfig.iScopeConfig.acquisition_config.raw_data_extension),
-                header_state=(MyConfig.iScopeConfig.acquisition_config.save_h5_header),
-                get_filepath=True
-            )
-        )
+        # filepaths_to_copy_from_scope.append(filepath_to_copy_from_scope)
+        filepaths_to_copy_from_scope.append(filename)
 
-        filepaths_to_copy_from_scope.append(filepath_to_copy_from_scope)
-
-        KeysightScope.iPrintScopeErrors(f"-----After trying to SAVE CHANNEL {channel.ch_num}---------")
-        print(KeysightScope.iQuery("SYSTem:ERRor?"))
-
+        # KeysightScope.iPrintScopeErrors(f"-----After trying to SAVE CHANNEL {channel.ch_num}---------")
+        # print(KeysightScope.iQuery("SYSTem:ERRor?"))
+    '''
     print("\nCopying saved files from scope to PC...")
 
     filepaths_copied_to_pc = []
@@ -197,9 +203,14 @@ def main():
     # Copy saved files from scope to PC
     # -----------------------------
     print("\nCopying saved files from scope to PC...")
-
+    
     filepaths_copied_to_pc = []
-    for filepath_to_copy_from_scope in (filepaths_to_copy_from_scope):
+    filenames = (
+        f"{MyConfig.iScopeConfig.h5_dir}\C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5",
+        # f"{MyConfig.iScopeConfig.h5_dir}\DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5"
+    )
+    # for filepath_to_copy_from_scope in filepaths_to_copy_from_scope:
+    for filepath_to_copy_from_scope in filenames:
         filepath_copied_to_pc = (
             KeysightScope.iCopyFile(
                 scope_filepath=filepath_to_copy_from_scope,
@@ -209,13 +220,16 @@ def main():
                 get_filepath=True
             )
         )
+
+        print(KeysightScope.iQuery("SYSTem:ERRor?"))
+
         filepaths_copied_to_pc.append(filepath_copied_to_pc)
 
         print("\nCopied PC files:")
 
     for filepath in filepaths_copied_to_pc:
         print(filepath)
-
+    
     KeysightScope.iClose()
 
 

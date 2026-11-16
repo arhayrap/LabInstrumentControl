@@ -19,7 +19,7 @@ SCOPE_WAVEFORM_DIR = r"D:\Waveforms" # CHANGE !
 # Teledyne Lecroy Waverunner 8000 series scope
 # InfiniiumScope class
 
-class TLecroyWaverunner8204:
+class TLecroyWaverunner8208:
     '''Teledyne Lecroy Waverunner 8000 oscilloscope object.'''
     def __init__(
             self,

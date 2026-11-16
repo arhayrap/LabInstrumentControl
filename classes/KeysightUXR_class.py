@@ -11,8 +11,8 @@ Samvel Aghavelyan
 import pyvisa
 import time
 
-DEFAULT_KEYSIGHT_VISA_ADDRESS = "USB0::10893::36867::MY64060141::0::INSTR"
-DEFAULT_KEYSIGHT_VISA_LIBRARY_PATH = "" # "/Library/Preferences/NIvisa/visaconf.ini" # "/opt/keysight/iolibs/libktvisa32.so"
+DEFAULT_KEYSIGHT_VISA_ADDRESS = "TCPIP0::KEYSIGH-MUTUU36.local::hislip0::INSTR" # "USB0::0x2A8D::0x9003::MY64060141::INSTR" # "USB0::10893::36867::MY64060141::0::INSTR"
+DEFAULT_KEYSIGHT_VISA_LIBRARY_PATH = "" # "/opt/keysight/iolibs/libktvisa32.so" # "/Library/Preferences/NIvisa/visaconf.ini" # "/opt/keysight/iolibs/libktvisa32.so"
 SCOPE_WAVEFORM_DIR = r"C:\Users\Public\Documents\Infiniium\Waveforms"
 
 

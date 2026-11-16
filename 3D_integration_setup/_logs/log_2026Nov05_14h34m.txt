@@ -1,0 +1,78 @@
+
+Copying saved files from scope to PC...
+
+Copied PC files:
+
+Copying saved files from scope to PC...
+Copying from scope: C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 72 bytes written
+Request seconds:  0.0007753079999019974
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.001 s
+Transferred:        0.000 MB
+Transfer time:      0.033 s
+Transfer speed:     0.000 MB/s
+Terminator time:    0.001 s
+Error-query time:   0.003 s
+Scope errors: -256
+
+Copied PC files:
+Copying from scope: C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 72 bytes written
+Request seconds:  0.0008848190000207978
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.001 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.002 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.002 s
+Scope errors: -256
+
+Copied PC files:
+Copying from scope: C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 72 bytes written
+Request seconds:  0.0006982040001730638
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.001 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.003 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.002 s
+Scope errors: -256
+
+Copied PC files:
+Copying from scope: C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 72 bytes written
+Request seconds:  0.0005794040000637324
+Number of digits:  1
+File size:          0.000 MB
+Response start:     0.001 s
+Transferred:        0.000 MB
+Transfer time:      0.000 s
+Transfer speed:     0.003 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.002 s
+Scope errors: -256
+
+Copied PC files:
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5

@@ -1,0 +1,94 @@
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 1---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 2---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 3---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 4---------
+Errors:  0
+0
+
+Copying saved files from scope to PC...
+
+Copied PC files:
+
+Copying saved files from scope to PC...
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 118 bytes written
+Request seconds:  0.001441174999854411
+Number of digits:  5
+File size:          0.017 MB
+Response start:     0.001 s
+Transferred:        0.017 MB
+Transfer time:      0.001 s
+Transfer speed:     12.447 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.003 s
+Scope errors: 0
+
+Copied PC files:
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 118 bytes written
+Request seconds:  0.0008674990003783023
+Number of digits:  5
+File size:          0.017 MB
+Response start:     0.001 s
+Transferred:        0.017 MB
+Transfer time:      0.001 s
+Transfer speed:     16.714 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.002 s
+Scope errors: 0
+
+Copied PC files:
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 118 bytes written
+Request seconds:  0.0008771370003159973
+Number of digits:  5
+File size:          0.017 MB
+Response start:     0.001 s
+Transferred:        0.017 MB
+Transfer time:      0.001 s
+Transfer speed:     18.435 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.002 s
+Scope errors: 0
+
+Copied PC files:
+Copying from scope: C:\Users\Public\Documents\Infiniium\Waveforms\C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+Copying to PC:      ../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+VISA chunk size:    1.049 MB
+Before VISA write
+After VISA write: 118 bytes written
+Request seconds:  0.0008554860005460796
+Number of digits:  5
+File size:          0.017 MB
+Response start:     0.001 s
+Transferred:        0.017 MB
+Transfer time:      0.001 s
+Transfer speed:     19.678 MB/s
+Terminator time:    0.000 s
+Error-query time:   0.002 s
+Scope errors: 0
+
+Copied PC files:
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+../0_RawData_h5/C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5

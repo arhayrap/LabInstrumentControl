@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 154, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/CopyFromLecroy.py", line 147, in main
+    response = TLecroyWaverunnerScope.read_bytes()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TLecroyWaverunner8208' object has no attribute 'read_bytes'

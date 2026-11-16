@@ -1,0 +1,22 @@
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 1---------
+Errors:  -410
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 2---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 3---------
+Errors:  0
+0
+C:\Users\Public\Documents\Infiniium\Waveforms C1_DJ_LGAD_50um_strip_Ch1_NEv200_BV117000mV_MCP4400.h5
+-----After trying to SAVE CHANNEL 4---------
+Errors:  0
+0
+
+Copying saved files from scope to PC...
+
+Copied PC files:
+
+Copying saved files from scope to PC...

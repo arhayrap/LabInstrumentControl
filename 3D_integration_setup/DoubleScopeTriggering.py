@@ -210,7 +210,7 @@ def main():
         
         # Set acquisition mode
         LecroyScope.iWrite("ARM_ACQUISITION SINGLE")
-        LecroyScope.iWrite(f"SEQ ON, {n_seq}")
+        LecroyScope.iWrite(f"SEQ ON, {2*n_seq}")
         # time.sleep(3)
         LecroyScope.iWrite("WAIT")
 
@@ -219,7 +219,7 @@ def main():
 
         # filename_pattern = "test_run_DJ_LGAD_trigger"
 
-
+        filepaths_to_copy_from_LecroyScope = []
         for i in range(1,9):
             filename_pattern = (
                 f"{MyConfig.iScopeConfig.acquisition_config.filename_prefix}_"
@@ -241,6 +241,8 @@ def main():
             LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.SaveSource = "C{i}"\'')
             LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.TraceTitle = "--{filename_pattern}"\'')
             LecroyScope.iWrite( 'vbs \'app.SaveRecall.Waveform.DoSave\'')
+            filepaths_to_copy_from_LecroyScope.append(f"C--{filename_pattern}.trc")
+            filepaths_to_copy_from_LecroyScope.append(f"F--{filename_pattern}.trc")
 
         if MyConfig.iScopeConfig.setup_trigger_or_not:
             try:
@@ -320,6 +322,7 @@ def main():
             print("Skipping trigger setup.")
 
         # Horizontal (timebase) setup.
+        '''
         try:
             KeysightScope.iSetupHorizontal(
                 # timebase_scale=0.25e-9, # MyConfig.iScopeConfig.timebase_config.h_scale,
@@ -330,8 +333,9 @@ def main():
             print("ERROR while setting horizontal/timebase scales/parameters.")
         finally:
             KeysightScope.iPrintScopeErrors("-----After HORIZONTAL setup----------------")
+        '''
 
-        # Vertical (channels )setup. 
+        # Vertical (channels) setup.
         if MyConfig.iScopeConfig.setup_vertical_or_not:
             try:
                 KeysightScope.iSetupVertical(
@@ -351,7 +355,7 @@ def main():
                 KeysightScope.iPrintScopeErrors("-----After VERTICAL setup-------------------")
         
         # KeysightScope.iSetTimebaseRange(0.5e-9)
-        KeysightScope.iWrite(":TIMebase:RANGe 1e-9")
+        # KeysightScope.iWrite(":TIMebase:RANGe 1e-9")
         
         # Acquisition parameters setup
         try:
@@ -377,6 +381,7 @@ def main():
 
         KeysightScope.iPrintScopeErrors("-----After SINGLE ACQUISITION---------------")
         KeysightScope.iStop()
+        LecroyScope.iStop()
         KeysightScope.iPrintScopeErrors("-----After STOP ----------------------------")
 
         print("\nSaving waveform files on the scope...")
@@ -387,12 +392,12 @@ def main():
             if channel.save_channel:
                 channels_to_save.append(channel)
 
-        filepaths_to_copy_from_scope = []
+        filepaths_to_copy_from_KeysightScope = []
         for channel in channels_to_save:
 
             filename = (
+                f"C{channel.ch_num}--"
                 f"{MyConfig.iScopeConfig.acquisition_config.filename_prefix}_"
-                f"Ch{channel.ch_num}_"
                 f"NEv{MyConfig.iScopeConfig.acquisition_config.segment_count}_"
                 f"BV{int(abs(bv)*1000)}mV_"
                 f"MCP{MyConfig.iScopeConfig.mcp_bias_voltage}"
@@ -409,18 +414,29 @@ def main():
                 )
             )
 
-            filepaths_to_copy_from_scope.append(filepath_to_copy_from_scope)
+            filepaths_to_copy_from_KeysightScope.append(filepath_to_copy_from_scope)
 
             KeysightScope.iPrintScopeErrors(f"-----After trying to SAVE CHANNEL {channel.ch_num}---------")
 
         print("\nSaved scope files:")
-
         for filepath in filepaths_to_copy_from_scope:
             print(filepath)
 
-        print("\nCopying saved files from scope to PC...")
+        print("\nCopying saved files from scopes to PC...")
 
         filepaths_copied_to_pc = []
+        for filepath in filepaths_to_copy_from_KeysightScope:
+            try:
+                os.system("cp -r -f {filepath} {MyConfig.iPC.h5_dir}")
+            except:
+                print(f"{filepath} from Keysight has not been copied properly.")
+
+        for filepath in filepaths_to_copy_from_LecroyScope:
+            try:
+                os.system("cp -r -f {filepath} {MyConfig.iPC.h5_dir}")
+            except:
+                print(f"{filepath} from Lecroy has not been copied properly.")
+        
         '''
         for filepath_to_copy_from_scope in (filepaths_to_copy_from_scope):
             filepath_copied_to_pc = (
@@ -434,9 +450,10 @@ def main():
             )
             filepaths_copied_to_pc.append(filepath_copied_to_pc)
         '''
-        print("\nCopied PC files:")
-        for filepath in filepaths_copied_to_pc:
-            print(filepath)
+
+        # print("\nCopied PC files:")
+        # for filepath in filepaths_copied_to_pc:
+        #     print(filepath)
 
         LecroyScope.iClose()
         KeysightScope.iClose()
