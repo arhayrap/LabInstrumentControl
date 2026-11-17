@@ -1,0 +1,12 @@
+*IDN LECROY,WR8208HD,LCRY5003N60377,11.5.0
+ALST STB,000000,ESR,000128,INR,008193,DDR,000000,CMR,000000,EXR,000000,URR,000000
+TRSE EDGE,SR,C8,HT,OFF
+C8:TRSL POS
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/ZScanLecroy.py", line 619, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/ZScanLecroy.py", line 214, in main
+    os.system(f"python3 dz_control.py --port /dev/ttyUSB1 --move_to {arguments.Z}")
+    ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?

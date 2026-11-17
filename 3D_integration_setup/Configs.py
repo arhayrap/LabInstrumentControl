@@ -199,7 +199,7 @@ class iScopeConfig:
     )
 
     acquisition_config = iAcquisitionConfig(
-        filename_prefix="DJ_LGAD_50um_strip", # "T3x3_AC100_Aug4_chargeSharing_p5p6",
+        filename_prefix="AC_LGAD_40um_strip", # "T3x3_AC100_Aug4_chargeSharing_p5p6",
         segment_count=200
         # segment_count=10
     )

@@ -15,14 +15,14 @@ steps_per_mm = 1024000 # 819200 # 409600
 max_z = 50.8 * steps_per_mm
 
 def move_to(stage, value):
-    target_mm = int(value)
-    target_pos = int(target_mm * steps_per_mm)
+    target_mm = float(value)
+    target_pos = target_mm * steps_per_mm
     stage.move_to(target_pos)
     wait_for_motor(stage, target_pos)
 
 def move_by(stage, value):
-    target_mm = int(value)
-    target_pos = int(target_mm * steps_per_mm)
+    target_mm = float(value)
+    target_pos = target_mm * steps_per_mm
     stage.move_by(target_pos)
     if stage.get_position() + target_pos >= max_z:
         final_destination = max_z
