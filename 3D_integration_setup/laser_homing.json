@@ -2,11 +2,11 @@
   "schema_version": 1,
   "channels": {
     "1": {
-      "homed_at": "2026-11-16T15:58:13.022567+00:00",
+      "homed_at": "2026-11-20T17:31:47.994825+00:00",
       "source": "dy_motion_v1.py --home"
     },
     "2": {
-      "homed_at": "2026-10-28T15:50:53.605270+00:00",
+      "homed_at": "2026-11-20T17:32:33.134615+00:00",
       "source": "dy_motion_v1.py --home"
     }
   }

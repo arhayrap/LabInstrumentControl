@@ -136,7 +136,7 @@ def main():
     
     TDiv = 5
     TDelay = 15 # 100
-    trigger_channel = "EXT" # "C1"
+    trigger_channel = "C8" # "EXT" # "C1"
     trigger_level = 500
     bv = 117
     n_seq = int(MyConfig.iScopeConfig.acquisition_config.segment_count)
@@ -226,6 +226,7 @@ def main():
                 f"NEv{MyConfig.iScopeConfig.acquisition_config.segment_count}_"
                 f"BV{int(abs(bv)*1000)}mV_"
                 f"MCP{MyConfig.iScopeConfig.mcp_bias_voltage}"
+                "test"
             )
             LecroyScope.iWrite(f'vbs \'app.Math.F{i}.View = True\'')
             LecroyScope.iWrite(f'vbs \'app.Math.F{i}.ViewLabels = True\'')

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/PosScanLecroy.py", line 639, in <module>
+    main()
+    ~~~~^^
+  File "/home/daq/LabInstrumentControl/3D_integration_setup/PosScanLecroy.py", line 132, in main
+    processing_pool = ThreadPoolExecutor(max_workers=arguments.workers)
+                                                     ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'arguments' where it is not associated with a value

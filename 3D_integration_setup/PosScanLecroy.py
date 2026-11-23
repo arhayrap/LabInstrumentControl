@@ -106,6 +106,8 @@ def main():
 
         parser.add_argument("--Z", type=float, help = "The position on the Z axis.")
         parser.add_argument("--X", type=float, help = "The position on the X axis.")
+        parser.add_argument("--Y", type=float, help = "The position on the Y axis.")
+        parser.add_argument("--tag", type=str, help = "The data taking goal.")
 
         arguments = parser.parse_args()
     except:
@@ -134,6 +136,14 @@ def main():
         25, 25, 25, 25, 25, 25, 25, 1000
     ]
     
+    VDivs = [
+        20, 20, 20, 20, 20, 20, 20, 1000
+    ]
+
+    VDivs = [
+        150, 150, 150, 150, 150, 150, 150, 1000
+    ]
+    
     VOffset = [
         0, 0, 0, 0, 0, 0, 0, 0
     ]
@@ -143,7 +153,7 @@ def main():
     trigger_channel = "C8" # "EXT" # "C1"
     trigger_level = 500
     bv = 115
-    n_seq = 1000 # int(MyConfig.iScopeConfig.acquisition_config.segment_count)
+    n_seq = 500 # int(MyConfig.iScopeConfig.acquisition_config.segment_count)
 
     # KeysightScope = InfiniiumScope()
     LecroyScope = TLecroyWaverunner8208()
@@ -174,9 +184,11 @@ def main():
     '''
     # Set the position
     os.system(f"python3 dz_control.py --port /dev/ttyUSB1 --move_to {arguments.Z}")
-    time.sleep(5)
-    os.system(f"python3 dy_motion_v1.py --port /dev/ttyUSB0 --move  {arguments.X}")
-    time.sleep(5)
+    time.sleep(3)
+    os.system(f"python3 dy_motion_v1.py --port /dev/ttyUSB3 --move  {arguments.X} --channel 1")
+    time.sleep(3)
+    os.system(f"python3 dy_motion_v1.py --port /dev/ttyUSB3 --move  {arguments.Y} --channel 2")
+    time.sleep(3)
 
     try:
         print(LecroyScope.iQuery("*IDN?"))
@@ -225,7 +237,7 @@ def main():
         LecroyScope.iWrite("WAIT")
 
         LecroyScope.iWrite('vbs \'app.SaveRecall.Waveform.SaveTo = "File"\'')
-        LecroyScope.iWrite('vbs \'app.SaveRecall.Waveform.WaveformDir = "D:\\Waveforms"\'')        
+        LecroyScope.iWrite('vbs \'app.SaveRecall.Waveform.WaveformDir = "D:\\Waveforms"\'')
 
         # filename_pattern = "test_run_DJ_LGAD_trigger"
 
@@ -239,12 +251,14 @@ def main():
             #)
             filename_pattern = (
                 f"{MyConfig.iScopeConfig.acquisition_config.filename_prefix}_"
+                f"{arguments.tag}_"
                 f"NEv{n_seq}_"
                 f"BV{int(abs(bv)*1000)}mV_"
-                f"Laser20pc_"
+                f"Laser95pc_"
                 f"Temp16C_"
                 f"Zpos{arguments.Z}_"
-                f"Xpos{arguments.X}"
+                f"Xpos{arguments.X}_"
+                f"Ypos{arguments.Y}"
             )
             LecroyScope.iWrite(f'vbs \'app.Math.F{i}.View = True\'')
             LecroyScope.iWrite(f'vbs \'app.Math.F{i}.ViewLabels = True\'')
