@@ -137,12 +137,12 @@ def main():
     ]
     
     VDivs = [
-        20, 20, 20, 20, 20, 20, 20, 1000
+        50, 50, 50, 50, 50, 50, 50, 1000
     ]
 
-    VDivs = [
-        150, 150, 150, 150, 150, 150, 150, 1000
-    ]
+    # VDivs = [
+    #     150, 150, 150, 150, 150, 150, 150, 1000
+    # ]
     
     VOffset = [
         0, 0, 0, 0, 0, 0, 0, 0
@@ -153,7 +153,7 @@ def main():
     trigger_channel = "C8" # "EXT" # "C1"
     trigger_level = 500
     bv = 115
-    n_seq = 500 # int(MyConfig.iScopeConfig.acquisition_config.segment_count)
+    n_seq = 1000 # int(MyConfig.iScopeConfig.acquisition_config.segment_count)
 
     # KeysightScope = InfiniiumScope()
     LecroyScope = TLecroyWaverunner8208()
@@ -254,7 +254,7 @@ def main():
                 f"{arguments.tag}_"
                 f"NEv{n_seq}_"
                 f"BV{int(abs(bv)*1000)}mV_"
-                f"Laser95pc_"
+                f"Laser90pc_"
                 f"Temp16C_"
                 f"Zpos{arguments.Z}_"
                 f"Xpos{arguments.X}_"

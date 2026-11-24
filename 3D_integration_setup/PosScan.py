@@ -5,11 +5,11 @@ import time
 
 if __name__ == "__main__":
     n_positions = 11
-    Y_range = [104.2]
-    Z_range = np.linspace(42, 44, 11)
-    X_range = np.linspace(40.4, 40.9, 21) # np.linspace(40.4, 40.9, 20)
+    Y_range = np.linspace(103.0, 105.5, 26) # [104.2]
+    Z_range = [42.4] # np.linspace(42, 44, 11)
+    X_range = [40.9] # np.linspace(40.7, 41.2, 21) # np.linspace(40.4, 40.9, 20)
     file_path = "/home/daq/LecroyMount/"
-    tag = "IR_EclipseOnEdge"
+    tag = "10db_attenuation_YaxisScan" # "IR_EclipseOnEdge"
     os.system(f"mkdir -p /home/daq/3D_sensors/{tag}")
     print(Z_range)
     print(X_range)
@@ -19,7 +19,7 @@ if __name__ == "__main__":
         for x in X_range:
             for y in Y_range:
                 print(f"Position z: {z}, position x: {x}, position y: {y}")
-                file_pattern = f"--AC_LGAD_40um_strip_{tag}_NEv500_BV115000mV_Laser95pc_Temp16C_Zpos{z}_Xpos{x}_Ypos{y}00000.trc"
+                file_pattern = f"--AC_LGAD_40um_strip_{tag}_NEv1000_BV115000mV_Laser90pc_Temp16C_Zpos{z}_Xpos{x}_Ypos{y}00000.trc"
                 os.system(f"python3 PosScanLecroy.py --Z {z} --X {x} --Y {y} --tag {tag}")
                 print(f"{file_path}F8{file_pattern}")
                 print(os.path.exists(f"{file_path}F8{file_pattern}"))
