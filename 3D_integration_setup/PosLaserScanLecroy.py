@@ -280,9 +280,9 @@ def main():
             LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.SaveSource = "F{i}"\'')
             LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.TraceTitle = "--{filename_pattern}"\'')
             LecroyScope.iWrite( 'vbs \'app.SaveRecall.Waveform.DoSave\'')
-            # LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.SaveSource = "C{i}"\'')
-            # LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.TraceTitle = "--{filename_pattern}"\'')
-            # LecroyScope.iWrite( 'vbs \'app.SaveRecall.Waveform.DoSave\'')
+            LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.SaveSource = "C{i}"\'')
+            LecroyScope.iWrite(f'vbs \'app.SaveRecall.Waveform.TraceTitle = "--{filename_pattern}"\'')
+            LecroyScope.iWrite( 'vbs \'app.SaveRecall.Waveform.DoSave\'')
             filepaths_to_copy_from_LecroyScope.append(f"C--{filename_pattern}.trc")
             filepaths_to_copy_from_LecroyScope.append(f"F--{filename_pattern}.trc")
 
